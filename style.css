@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.wrapper {
+  height: 100vh; /* Растягиваем по высоте */
+  width: 100vw; /* Растягиваем по ширине */
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main,
+footer {
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Растягиваем элементы на всю ширину экрана */
+}
+
+main {
+  flex: 1;
+  background: linear-gradient(to right, #00bcd4, #0088cc); /* Градиентный фон */
+  color: white;
+  padding: 40px 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Обновленные цвета для header */
+header {
+  background-color: #1a1a1a; /* Темно-серый для header */
+  width: 100%; /* Растягиваем на всю ширину экрана */
+}
+
+/* Обновленные цвета для footer */
+footer {
+  background-color: #1a1a1a; /* Темно-серый для footer */
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Растягиваем на всю ширину экрана */
+}
+
+footer p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.head_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  padding: 5px;
+  width: 50px; /* Устанавливаем нужную ширину */
+  height: auto; /* Высота автоматически подстраивается */
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+.telegram-button {
+  background-color: #0088cc; /* Цвет фона Telegram */
+  color: white; /* Цвет текста */
+  padding: 15px 30px; /* Отступы внутри кнопки */
+  font-size: 18px; /* Размер шрифта */
+  border: none; /* Убираем бордер */
+  border-radius: 50px; /* Скругленные углы */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.telegram-button:hover {
+  background-color: #0077b3;
+}
+
+.telegram-button:focus {
+  outline: none;
+}
+
+.telegram-button svg {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Планшетная версия */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 20px;
+  }
+  .head_flex {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .telegram-button {
+    font-size: 17px;
+    padding: 13px 28px;
+  }
+}
+
+/* Десктопная версия */
+@media (min-width: 1025px) {
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .telegram-button {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .head_flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 40px;
+    margin-bottom: 0px; /* Увеличиваем расстояние между логотипом и текстом */
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 15px;
+    margin-left: 0;
+    margin-top: 10px; /* Добавляем отступ сверху для заголовка */
+  }
+
+  .telegram-button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
