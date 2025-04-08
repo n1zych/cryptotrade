@@ -1,47 +1,253 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CryptoTrade</title>
-  <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoTrade</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Попытка автоперехода -->
-  <script>
-    // Попробовать автоматически открыть Telegram через 2 секунды
-    setTimeout(() => {
-      window.location.href = "https://t.me/+HQsAYoDLYwg5NGM0";
-    }, 2000);
-  </script>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: "Roboto", sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        .wrapper {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header,
+        main,
+        footer {
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        main {
+            flex: 1;
+            background: linear-gradient(to right, #00bcd4, #0088cc);
+            color: white;
+            padding: 40px 20px;
+            transition: background-color 0.3s ease;
+            flex-direction: column;
+            display: flex;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer p {
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            color: white;
+        }
+
+        .head_flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            padding: 5px;
+            width: 50px;
+            height: auto;
+        }
+
+        h1 {
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 10px;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .telegram-button {
+            background-color: #0088cc;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        .telegram-button:hover {
+            background-color: #0077b3;
+        }
+
+        .telegram-button:focus {
+            outline: none;
+        }
+
+        .telegram-button svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 0 16px;
+            font-size: 14px;
+            color: #f0f0f0;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            word-break: break-word;
+        }
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .head_flex {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .telegram-button {
+                font-size: 17px;
+                padding: 13px 28px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .wrapper {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .telegram-button {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .head_flex {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                width: 40px;
+                margin-bottom: 0px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 15px;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .telegram-button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .note {
+                font-size: 13px;
+                padding: 0 12px;
+            }
+        }
+    </style>
+    <script>
+        // Попытка открыть Telegram через intent (Android)
+        window.onload = function () {
+            const isAndroid = /android/i.test(navigator.userAgent);
+            if (isAndroid) {
+                setTimeout(() => {
+                    window.location.href =
+                        "intent://t.me/+HQsAYoDLYwg5NGM0#Intent;scheme=https;package=org.telegram.messenger;end;";
+                }, 2000);
+            }
+        };
+    </script>
 </head>
 <body>
 <div class="wrapper">
-  <header>
-    <div class="head_flex">
-      <img
-              class="logo"
-              src="./Без_названия__2_-removebg-preview.png"
-              alt="logo"
-      />
-      <h1>Приветствую на переходнике в канал Илья | CryptoTrade</h1>
-    </div>
-  </header>
-
-  <main>
-    <a href="https://t.me/+HQsAYoDLYwg5NGM0" target="_blank">
-      <button class="telegram-button">👉 Перейти в Telegram</button>
-    </a>
-
-    <p class="note">
-      ⚠️ Если не открывается — нажмите на три точки ⋮ вверху экрана и выберите<br>
-      <strong>«Открыть в браузере»</strong>
-    </p>
-  </main>
-
-  <footer>
-    <p>© CryptoTrade</p>
-  </footer>
+    <header>
+        <div class="head_flex">
+            <img
+                    class="logo"
+                    src="./Без_названия__2_-removebg-preview.png"
+                    alt="logo"
+            />
+            <h1>Приветствую на переходнике в канал Илья | CryptoTrade</h1>
+        </div>
+    </header>
+    <main>
+        <a
+                href="https://t.me/+HQsAYoDLYwg5NGM0"
+                target="_blank"
+                class="telegram-button"
+        >
+            👉 Перейти в Telegram
+        </a>
+        <p class="note">
+            ⚠️ Если Telegram не открылся — нажмите ⋮ в правом верхнем углу и выберите<br />
+            <strong>«Открыть в браузере»</strong>
+        </p>
+    </main>
+    <footer>
+        <p>© CryptoTrade</p>
+    </footer>
 </div>
 </body>
 </html>
-
